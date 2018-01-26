@@ -1,4 +1,4 @@
-package pl.agh.edu.mszarek.chatclient;
+package pl.agh.edu.mszarek.chatclient.LoggingScenes;
 
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -9,31 +9,31 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class Port {
+public class Channel {
 
-    private static Integer port = 8080;
+    private static String channel = "noname";
 
 
-    public static Integer display() {
+    public static String display() {
 
 
         Stage window = new Stage();
         window.initModality(Modality.APPLICATION_MODAL);
         window.setTitle("Login");
-        window.setMinWidth(400);
+        window.setMinWidth(250);
 
         //Label
-        Label label = new Label("Insert port");
+        Label label = new Label("Insert channel");
 
         //TextField
         TextField field = new TextField();
 
         //Button
-        Button button = new Button("next");
+        Button button = new Button("log in");
         button.setDefaultButton(true);
         button.setOnAction(e -> {
             if (!field.getText().equals(""))
-                port = Integer.parseInt(field.getText());
+                channel = field.getText();
             window.close();
         });
 
@@ -44,6 +44,6 @@ public class Port {
         window.setScene(scene);
         window.showAndWait();
 
-        return port;
+        return channel;
     }
 }

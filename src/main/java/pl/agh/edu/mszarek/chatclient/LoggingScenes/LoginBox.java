@@ -1,4 +1,4 @@
-package pl.agh.edu.mszarek.chatclient;
+package pl.agh.edu.mszarek.chatclient.LoggingScenes;
 
 import javafx.geometry.Pos;
 import javafx.scene.Scene;

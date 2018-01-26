@@ -48,7 +48,6 @@ public class ClientThread implements Runnable{
             try{
                 while(!socket.isClosed()){
                     Message msg = (Message) is.readObject();
-                    System.out.println(msg.toString());
                     if(msg != null && msg.getChatRoom().equals(this.chatRoom)){
                         if(msg.getPrivateMsg()){
                             tmp.entrySet().stream().filter(item -> msg.getRecipient().equals(item.getKey())).

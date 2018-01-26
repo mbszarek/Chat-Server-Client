@@ -1,4 +1,4 @@
-package pl.agh.edu.mszarek.chatclient;
+package pl.agh.edu.mszarek.chatclient.LoggingScenes;
 
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -9,12 +9,12 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class Hostname {
+public class Port {
 
-    private static String host = "localhost";
+    private static Integer port = 8080;
 
 
-    public static String display() {
+    public static Integer display() {
 
 
         Stage window = new Stage();
@@ -23,7 +23,7 @@ public class Hostname {
         window.setMinWidth(400);
 
         //Label
-        Label label = new Label("Insert host");
+        Label label = new Label("Insert port");
 
         //TextField
         TextField field = new TextField();
@@ -33,7 +33,7 @@ public class Hostname {
         button.setDefaultButton(true);
         button.setOnAction(e -> {
             if (!field.getText().equals(""))
-                host = field.getText();
+                port = Integer.parseInt(field.getText());
             window.close();
         });
 
@@ -44,6 +44,6 @@ public class Hostname {
         window.setScene(scene);
         window.showAndWait();
 
-        return host;
+        return port;
     }
 }

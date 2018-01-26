@@ -6,6 +6,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import pl.agh.edu.mszarek.chatclient.LoggingScenes.Channel;
+import pl.agh.edu.mszarek.chatclient.LoggingScenes.Hostname;
+import pl.agh.edu.mszarek.chatclient.LoggingScenes.LoginBox;
+import pl.agh.edu.mszarek.chatclient.LoggingScenes.Port;
 import pl.agh.edu.mszarek.model.Message;
 
 import java.io.IOException;
@@ -46,7 +50,6 @@ public class MainChatController implements Initializable {
         if (!insertText.getText().equals("")) {
             try {
                 Main.client.sendMsg(new Message(Main.client.getName(), Main.client.getChannel(), insertText.getText()));
-                System.out.println(Main.client.getName());
             } catch (IOException e) {
                 System.err.println("Couldn't send message");
                 e.printStackTrace();

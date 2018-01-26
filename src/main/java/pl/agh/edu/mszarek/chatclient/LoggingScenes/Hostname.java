@@ -1,4 +1,4 @@
-package pl.agh.edu.mszarek.chatclient;
+package pl.agh.edu.mszarek.chatclient.LoggingScenes;
 
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -9,9 +9,9 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class Channel {
+public class Hostname {
 
-    private static String channel = "noname";
+    private static String host = "localhost";
 
 
     public static String display() {
@@ -20,20 +20,20 @@ public class Channel {
         Stage window = new Stage();
         window.initModality(Modality.APPLICATION_MODAL);
         window.setTitle("Login");
-        window.setMinWidth(250);
+        window.setMinWidth(400);
 
         //Label
-        Label label = new Label("Insert channel");
+        Label label = new Label("Insert host");
 
         //TextField
         TextField field = new TextField();
 
         //Button
-        Button button = new Button("log in");
+        Button button = new Button("next");
         button.setDefaultButton(true);
         button.setOnAction(e -> {
             if (!field.getText().equals(""))
-                channel = field.getText();
+                host = field.getText();
             window.close();
         });
 
@@ -44,6 +44,6 @@ public class Channel {
         window.setScene(scene);
         window.showAndWait();
 
-        return channel;
+        return host;
     }
 }
