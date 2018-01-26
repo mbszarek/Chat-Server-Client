@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 
 public class Channel {
 
-    private static String channel = "noname";
+    private static String channel = "default";
 
 
     public static String display() {
@@ -20,10 +20,10 @@ public class Channel {
         Stage window = new Stage();
         window.initModality(Modality.APPLICATION_MODAL);
         window.setTitle("Login");
-        window.setMinWidth(250);
+        window.setMinWidth(400);
 
         //Label
-        Label label = new Label("Insert channel");
+        Label label = new Label("Insert channel name");
 
         //TextField
         TextField field = new TextField();

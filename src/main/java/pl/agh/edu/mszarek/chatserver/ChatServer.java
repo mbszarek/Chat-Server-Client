@@ -40,7 +40,13 @@ public class ChatServer {
 
     public static void main(String[] args){
         ChatServer server;
-        if(args.length>0) server = new ChatServer(Integer.parseInt(args[0]));
+        if(args.length>0) {
+            if(args[0].matches("[a-zA-Z]")) {
+                System.err.println("Usage: java -jar ... $PORTNUMBER");
+                throw new IllegalArgumentException();
+            }
+            server = new ChatServer(Integer.parseInt(args[0]));
+        }
         else server = new ChatServer();
         server.startServer();
     }

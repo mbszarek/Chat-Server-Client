@@ -23,9 +23,7 @@ public class ClientThread implements Runnable{
         String cr = null;
         try {
             cr = (String) is.readObject();
-            System.out.println(cr);
             nm = (String) is.readObject();
-            System.out.println(nm);
         } catch (ClassNotFoundException e) {
             System.err.println("Wrong name.");
             e.printStackTrace();
@@ -75,6 +73,7 @@ public class ClientThread implements Runnable{
                 socket.close();
             } catch (IOException ioe) {
                 ioe.printStackTrace();
+                System.exit(1);
             } catch (ClassNotFoundException cnfe){
                 cnfe.printStackTrace();
                 System.exit(1);
